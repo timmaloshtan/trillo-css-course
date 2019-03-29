@@ -18,7 +18,7 @@
         font-family: inherit;
         font-size: inherit;
         color: inherit;
-        background-color: var(--color-gray-light-2);
+        background-color: var(--color-grey-light-2);
         border: none;
         padding: 0.7rem 2rem;
         border-radius: 100px;
@@ -29,22 +29,22 @@
         &:focus {
             outline: none;
             width: 100%;
-            background-color: var(--color-gray-light-3);
+            background-color: var(--color-grey-light-3);
         }
 
         &::-webkit-input-placeholder {
             font-weight: 100;
-            color: var(--color-gray-light-4);
+            color: var(--color-grey-light-4);
         }
     }
 
     &__input:focus + &__button {
-        background-color: var(--color-gray-light-3);
+        background-color: var(--color-grey-light-3);
     }
 
     &__button {
         border: none;
-        background-color: var(--color-gray-light-2);
+        background-color: var(--color-grey-light-2);
 
         &:focus {
             outline: none;
@@ -54,7 +54,7 @@
     &__icon {
         height: 2rem;
         width: 2rem;
-        fill: var(--color-gray-dark-3);
+        fill: var(--color-grey-dark-3);
     }
 }
 
@@ -73,7 +73,7 @@
         align-items: center;
 
         &:hover {
-            background-color: var(--color-gray-light-2);
+            background-color: var(--color-grey-light-2);
         }
     }
 
@@ -84,7 +84,7 @@
     &__icon {
         height: 2.25rem;
         width: 2.25rem;
-        fill: var(--color-gray-dark-3);
+        fill: var(--color-grey-dark-3);
     }
 
     &__notification {
@@ -153,7 +153,7 @@
 
     &__link:link,
     &__link:visited {
-        color: var(--color-gray-light-1);
+        color: var(--color-grey-light-1);
         text-decoration: none;
         text-transform: uppercase;
         display: block;
@@ -178,7 +178,7 @@
 // LEGAL TEXT
 .legal {
     font-size: 1.2rem;
-    color: var(--color-gray-light-4);
+    color: var(--color-grey-light-4);
     text-align: center;
     padding: 2.5rem;
 }
@@ -268,8 +268,17 @@
     background-color: transparent;
     cursor: pointer;
 
+    & span {
+        margin-left: 3px;
+        transition: margin-left .2;
+    }
+
     &:hover {
-        color: var(--color-gray-dark-1);
+        color: var(--color-grey-dark-1);
+
+        span {
+            margin-left: 8px;
+        }
     }
 
     &:focus {
@@ -342,7 +351,7 @@
 // RECOMMEND
 .recommend {
     font-size: 1.3rem;
-    color: var(--color-gray-dark-3);
+    color: var(--color-grey-dark-3);
 
     display: flex;
     align-items: center;
@@ -366,5 +375,71 @@
         &:not(:last-child) {
             margin-right: -2rem;
         }
+    }
+}
+
+//////////////////////
+// REVIEW
+.review {
+    background-color: #fff;
+    box-shadow: var(--shadow-light);
+    padding: 3rem;
+    margin-bottom: 3.5rem;
+    position: relative;
+    overflow: hidden;
+
+    &__text {
+        z-index: 10;
+        position: relative;
+    }
+
+    &__user {
+        display: flex;
+        align-items: center;
+        margin-top: 2rem;
+    }
+
+    &__photo {
+        height: 4.5rem;
+        width: 4.5rem;
+        border-radius: 50%;
+    }
+
+    &__user-box {
+        margin-right: auto;
+        margin-left: 1.5rem;
+    }
+
+    &__user-name {
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 1.1rem;
+        margin-bottom: .4rem;
+    }
+
+    &__user-date {
+        font-size: 1rem;
+        color: var(--color-grey-dark-3);
+    }
+
+    &__rating {
+        font-size: 2.25rem;
+        font-weight: 300;
+        color: var(--color-primary);
+    }
+
+    &::before {
+        content: "\201C";
+        font-size: 20rem;
+        font-family: sans-serif;
+        line-height: 1;
+        
+        color: var(--color-grey-light-2);
+
+        display: block;
+        position: absolute;
+        top: -2.5rem;
+        left: -.8rem;
+        z-index: 1;
     }
 }
